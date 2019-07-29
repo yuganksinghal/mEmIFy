@@ -17,4 +17,7 @@ func main() {
 	}
 	fmt.Println("With a seed of 0: ", mEmIFy.SpongebobCaseSeed(input, 0))
 	fmt.Println("With convenience function: ", mEmIFy.SpongebobCase(input))
+
+	ccify, _ := mEmIFy.CCify(input)
+	fmt.Println("With a CCify function: ", ccify)
 }
