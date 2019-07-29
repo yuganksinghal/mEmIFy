@@ -1,3 +1,4 @@
+// mEmIFy is a meme library. Its practically useless. If you're using this, it's your fault.
 package mEmIFy
 
 import (
