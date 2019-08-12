@@ -13,7 +13,8 @@ import (
 func SpongebobCaseSeed(s string, seed int64) string {
 	rand.Seed(seed)
 	spongebobString := ""
-	for _, v := range s {
+	trimmed := strings.TrimSpace(s)
+	for _, v := range trimmed {
 		probs := rand.Intn(100)
 		if probs > 51 {
 			spongebobString = spongebobString + strings.ToUpper(string(v))
@@ -51,4 +52,18 @@ func CCify(s string) (string, error) {
 		newString = append(newString, keepSafe)
 	}
 	return strings.Join(newString, " "), nil
+}
+
+// Adds a space between each letter in a word. A good example would be to look up nathanwpylestrangeplanet on instagram and look at the one word descriptions on a post
+func Spacity(s string) (string, error) {
+	if s == "" {
+		return "", errors.New("The string passed in is empty")
+	}
+	trimmed := strings.TrimSpace(s)
+	split := strings.Split(trimmed, " ")
+	if len(split) > 1 {
+		return "", errors.New("The string should have one word")
+	}
+	split = strings.Split(trimmed, "")
+	return strings.Join(split, " "), nil
 }
