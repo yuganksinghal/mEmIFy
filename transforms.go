@@ -44,7 +44,7 @@ func CCify(s string) (string, error) {
 	newString := make([]string, 0)
 	for _, v := range split {
 		keepSafe := v
-		if regular.MatchString(v) {
+		if regular.MatchString(v) && string(v[len(v)-3]) == "c" {
 			keepSafe = v[:len(v)-3] + "cc" + string(v[len(v)-1])
 		} else if string(v[len(v)-2]) == "c" {
 			keepSafe = v[:len(v)-2] + "cc"
@@ -54,7 +54,7 @@ func CCify(s string) (string, error) {
 	return strings.Join(newString, " "), nil
 }
 
-// Adds a space between each letter in a word. A good example would be to look up nathanwpylestrangeplanet on instagram and look at the one word descriptions on a post
+// Spacity adds a space between each letter in a word. A good example would be to look up nathanwpylestrangeplanet on instagram and look at the one word descriptions on a post
 func Spacity(s string) (string, error) {
 	if s == "" {
 		return "", errors.New("The string passed in is empty")

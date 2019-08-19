@@ -40,6 +40,11 @@ func TestCCify(t *testing.T) {
 		t.Fail()
 	}
 
+	helloagain, err := CCify("hello world!") // testing hello world
+	if helloagain != "hello world!" || err != nil {
+		t.Fail()
+	}
+
 	protecc, err := CCify("Protect and Attack") // standard test case
 	if protecc != "Protecc and Attacc" || err != nil {
 		t.Fail()
