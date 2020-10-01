@@ -29,7 +29,7 @@ func SpongebobCaseSeed(s string, seed int64) string {
 func SpongebobCase(s string) string {
 	return SpongebobCaseSeed(s, time.Now().UnixNano())
 }
-
+//as;ldfkja;sldfjk/
 // CCify translates words like protect to protecc
 func CCify(s string) (string, error) {
 	if s == "" {
